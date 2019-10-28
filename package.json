@@ -1,0 +1,25 @@
+{
+  "name": "performance-matters-1819",
+  "version": "1.0.0",
+  "description": "NPM for performance matters",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamalvr/performance-matters-1819.git"
+  },
+  "author": "Jamal van Rooijen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamalvr/performance-matters-1819/issues"
+  },
+  "homepage": "https://github.com/jamalvr/performance-matters-1819#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
