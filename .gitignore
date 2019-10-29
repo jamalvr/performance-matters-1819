@@ -1,2 +1,6 @@
-# Ignore modules themselves
+# Modules themselves
 node_modules
+
+# Rest
+.DS_Store
+.DS_Store/*
