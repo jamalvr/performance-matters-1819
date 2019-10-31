@@ -1,10 +1,19 @@
 <%- include ./partials/head.ejs %>
 
 <div class="pokemon-page">
-    <a class="button button-back" href="/posts">back</a>
+    <a class="button button-back" href="/">back</a>
     <div class="pokemon-details">
-        <h1><%- postData.title %></h1>
-        <p><%- postData.body %></p>
+        <div class="pokemon-card">
+            <h1><%- postData.name %></h1>
+
+            <div class="pokemon-images">
+                <img src="<%- postData.sprites.front_shiny %>" alt="">
+                <img src="<%- postData.sprites.back_shiny %>" alt="">
+            </div>
+
+            <p>Weight: <strong><%- postData.weight %></strong></p>
+        </div>
+
     </div>
 </div>
 

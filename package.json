@@ -22,6 +22,7 @@
   "homepage": "https://github.com/jamalvr/performance-matters-1819#readme",
   "dependencies": {
     "browserify": "^16.5.0",
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "request": "^2.88.0"
   },

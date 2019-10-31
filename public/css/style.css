@@ -138,3 +138,13 @@ ul.content {
 .pokemon-page img {
     height: 200px;
 }
+
+.pokemon-details .pokemon-card {
+    max-width: 400px;
+    text-align: center;
+}
+
+.pokemon-details .pokemon-images {
+    display: flex;
+    justify-content: center;
+}
