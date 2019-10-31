@@ -21,26 +21,28 @@ const toggleMenu = {
     arrayEdits: function () {
         let sorted = [];
 
-        if (state.statusSort) {
-            sorted = helper.sort(state.globalPokemon, 'bmi');
-        } else {
-            sorted = helper.sort(state.globalPokemon, 'order');
-        }
-
         if (state.statusFilter) {
-            sorted = sorted.filter(function (pokemon) {
-                return pokemon.bmi > 20;
+            sorted = state.pokemonWeight.filter(function (pokemon) {
+                return Number(pokemon.textContent) < 300;
             });
+            sorted.forEach(function (card) {
+                let closestElement = card.closest('li');
+                closestElement.classList.add('doei');
+            })
+        } else {
+            sorted = state.pokemonWeight;
+            sorted.forEach(function (card) {
+                let closestElement = card.closest('li');
+                closestElement.classList.remove('doei');
+            })
         }
-        console.log(sorted);
-        createTemplate.card(sorted);
     },
 
     init: function () {
-        toggleMenu.button('.sort-bmi', function (active) {
-            state.statusSort = active;
-            toggleMenu.arrayEdits()
-        });
+        // toggleMenu.button('.sort-bmi', function (active) {
+        //     state.statusSort = active;
+        //     toggleMenu.arrayEdits()
+        // });
 
         toggleMenu.button('.filter-bmi', function (active) {
             state.statusFilter = active;

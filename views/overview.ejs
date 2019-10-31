@@ -1,11 +1,25 @@
 <%- include ./partials/head.ejs %>
 
 <h1>Overview</h1>
-<ul class="content">
+
+<div class="filter-menu">
+    <!-- <div class="filter-submenu">
+        <h3>Sorteer</h3>
+        <button class="sort-bmi js-hook">BMI sort</button>
+    </div> -->
+
+    <div class="filter-submenu">
+        <h3>Filter</h3>
+        <button class="filter-bmi js-hook">BMI filter</button>
+    </div>
+</div>
+
+<ul class="content overview">
     <% pokemonData.forEach(function(pokemon) { %>
     <li>
         <a class="pokemon-card pokemon-<%- pokemon.id %>" href="/<%- pokemon.name %>">
             <h2><%- pokemon.name %></h2>
+            <span>weight: <strong class="pokemon-weight">200</strong>lbs</span>
         </a>
     </li>
     <% }); %>

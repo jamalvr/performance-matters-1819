@@ -1,10 +1,10 @@
 //// Set global var
-var globalPokemon = [];
+var pokemonWeight = [];
+var pokemonCards = [];
 var statusFilter;
-var statusSort;
 
 export default {
-    globalPokemon,
+    pokemonWeight,
+    pokemonCards,
     statusFilter,
-    statusSort
 }

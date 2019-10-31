@@ -5,23 +5,17 @@ const helper = {
         });
     },
 
-    // Map pokemon
-    map: function (pokemon) {
-        return pokemon.map(function (pokemon) {
-            let pokeData = {
-                name: pokemon.name,
-                sprite: pokemon.sprites.front_shiny,
-                weight: pokemon.weight / 10,
-                height: pokemon.height / 10,
-                order: pokemon.order,
-            }
+    // // Map pokemon
+    // mapWeight: function (pokemon) {
+    //     return pokemon.map(function (pokemon) {
+    //         let pokeData = {
+    //             weight: Number(pokemon.textContent),
+    //             list: pokemon.classList,
+    //         }
 
-            // Add BMI to pokedata object with right formula
-            pokeData.bmi = Math.round(pokeData.weight / (pokeData.height * pokeData.height));
-
-            return pokeData;
-        });
-    },
+    //         return pokeData;
+    //     });
+    // },
 };
 
 export default helper;

@@ -38,10 +38,15 @@ body {
     color: var(--color_white);
     line-height: 1.4;
     padding: var(--spacing_xl);
+    margin: 0;
 }
 
 a {
     text-decoration: none;
+}
+
+h3 {
+    margin-top: 0;
 }
 
 .filter-menu {
@@ -59,7 +64,7 @@ button,
     color: var(--color_white);
     font-size: var(--font-size_l);
     cursor: pointer;
-    min-width: 180px;
+    min-width: 140px;
     margin-right: var(--spacing_default);
     text-align: center;
     border-radius: var(--radius-default);
@@ -126,7 +131,7 @@ ul.content {
 }
 
 .pokemon-card h2 {
-    font-size: var(--font-size_default);
+    font-size: var(--font-size_l);
     margin: 0;
 }
 
@@ -147,4 +152,8 @@ ul.content {
 .pokemon-details .pokemon-images {
     display: flex;
     justify-content: center;
+}
+
+.doei {
+    display: none;
 }
