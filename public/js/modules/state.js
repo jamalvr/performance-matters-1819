@@ -3,8 +3,6 @@ var pokemonWeight = [];
 var pokemonCards = [];
 var statusFilter;
 
-export default {
-    pokemonWeight,
-    pokemonCards,
-    statusFilter,
-}
+exports.pokemonCards = pokemonCards;
+exports.pokemonWeight = pokemonWeight;
+exports.statusFilter = statusFilter;

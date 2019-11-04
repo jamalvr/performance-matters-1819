@@ -1,14 +1,14 @@
 "use strict";
 
-import data from './modules/data.js';
-import toggleMenu from './modules/toggleMenu.js';
+let data = require('./modules/data.js');
+let toggleMenu = require('./modules/togglemenu.js');
 
 (function () {
     //// App structure
     const app = function () {
-        toggleMenu.init();
-        data.getPokemonWeight();
-        data.getPokemonCards();
+        toggleMenu.toggleMenu.init();
+        data.data.getPokemonWeight();
+        data.data.getPokemonCards();
     }
 
     app();

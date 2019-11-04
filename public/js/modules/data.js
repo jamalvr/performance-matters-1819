@@ -1,5 +1,4 @@
-import helper from './helper.js';
-import state from './state.js';
+let state = require('./state.js');
 
 const data = {
     getPokemonWeight: function () {
@@ -24,4 +23,4 @@ const data = {
     }
 };
 
-export default data;
+exports.data = data;

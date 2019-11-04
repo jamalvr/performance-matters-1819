@@ -1,6 +1,4 @@
-import state from './state.js';
-import helper from './helper.js';
-import createTemplate from './createtemplate.js';
+let state = require('./state.js');
 
 const toggleMenu = {
     // Button functionality
@@ -39,11 +37,6 @@ const toggleMenu = {
     },
 
     init: function () {
-        // toggleMenu.button('.sort-bmi', function (active) {
-        //     state.statusSort = active;
-        //     toggleMenu.arrayEdits()
-        // });
-
         toggleMenu.button('.filter-bmi', function (active) {
             state.statusFilter = active;
             toggleMenu.arrayEdits()
@@ -51,4 +44,4 @@ const toggleMenu = {
     },
 };
 
-export default toggleMenu;
+exports.toggleMenu = toggleMenu;
