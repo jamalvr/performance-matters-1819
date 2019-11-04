@@ -74,10 +74,12 @@ const toggleMenu = {
     },
 
     init: function () {
-        toggleMenu.button('.filter-bmi', function (active) {
-            state.statusFilter = active;
-            toggleMenu.arrayEdits()
-        });
+        if (document.querySelector('.filter-bmi')) {
+            toggleMenu.button('.filter-bmi', function (active) {
+                state.statusFilter = active;
+                toggleMenu.arrayEdits()
+            });
+        }
     },
 };
 

@@ -14,7 +14,9 @@ router.get('/', function (req, res) {
 
 		if (err) {
 			// We got an error
-			res.send(err);
+			res.render('404', {
+				title: '404',
+			});
 		} else {
 			// Render the page using the 'posts' view and our body data
 			res.render('overview', {
@@ -32,7 +34,9 @@ router.get('/:id', function (req, res) {
 	}, function (err, requestRes, body) {
 		if (err) {
 			// We got an error
-			res.send(err);
+			res.render('404', {
+				title: '404	',
+			});
 		} else {
 			console.log(body);
 
