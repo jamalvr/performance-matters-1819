@@ -9,7 +9,7 @@ const serviceWorker = function () {
                 var urlsToCache = [
                     '/',
                     '/css/style.css',
-                    // '/img/favicon.ico',
+                    
                     '/js/bundle.js',
                 ];
 
