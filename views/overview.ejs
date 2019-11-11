@@ -19,7 +19,8 @@
     <li>
         <a class="pokemon-card pokemon-<%- pokemon.id %>" href="/<%- pokemon.name %>">
             <h2><%- pokemon.name %></h2>
-            <span>weight: <strong class="pokemon-weight">200</strong>lbs</span>
+            <img src="<%- pokemon.sprites.back_shiny %>" alt="">
+            <span>weight: <strong class="pokemon-weight"><%- pokemon.weight %></strong> lbs</span>
         </a>
     </li>
     <% }); %>

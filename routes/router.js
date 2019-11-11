@@ -9,15 +9,39 @@ const router = express.Router();
 router.get('/', function (req, res) {
 	request('https://pokeapi.co/api/v2/pokemon/', {
 		json: true
-	}, function (err, requestRes, body) {
+	}, async function (err, requestRes, body) {
 		console.log(body);
-
 		if (err) {
 			// We got an error
-			res.render('404', {
-				title: '404',
+			res.render('error', {
+				title: '503',
+				header: '503 gij hedde geen internet verbinding',
+				paragraph: 'We kunnen daardoor de overzichtspagina niet laden',
 			});
 		} else {
+			function getPokemonDetails(url, i) {
+				return new Promise(function (resolve, reject) {
+					request(url, {
+						json: true
+					}, function (err, requestRes, pokemonDetails) {
+						if (!err) {
+							body.results[i] = pokemonDetails;
+
+							resolve(body);
+						} else {
+							reject
+						}
+					})
+				})
+			}
+
+			for (let i = 0; body.results.length > i; i++) {
+				// console.log(i, body.results[i].url);
+				let url = body.results[i].url;
+
+				await getPokemonDetails(url, i);
+			}
+
 			// Render the page using the 'posts' view and our body data
 			res.render('overview', {
 				title: 'Posts', // We use this for the page title, see views/partials/head.ejs
@@ -34,8 +58,10 @@ router.get('/:id', function (req, res) {
 	}, function (err, requestRes, body) {
 		if (err) {
 			// We got an error
-			res.render('404', {
-				title: '404	',
+			res.render('error', {
+				title: '503',
+				header: '503 gij hedde geen internet verbinding',
+				paragraph: 'We kunnen daardoor de detailpagina niet laden',
 			});
 		} else {
 			console.log(body);
