@@ -1,4 +1,4 @@
-let state = require('./state.js');
+const state = require('./state.js');
 
 const data = {
     getPokemonWeight: function () {
