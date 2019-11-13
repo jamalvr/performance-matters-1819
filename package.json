@@ -9,7 +9,7 @@
   "scripts": {
     "test": "run test",
     "start": "nodemon ./index.js",
-    "build": "browserify ./public/js/script.js > ./public/js/bundle.js && minify ./public/js/bundle.js > ./public/js/bundle.min.js && minify ./public/serviceworker.js > ./public/serviceworker.min.js && minify ./public/css/style.css > ./public/css/style.min.css"
+    "build": "browserify ./public/js/script.js > ./public/js/bundle.js && minify ./public/js/bundle.js > ./public/js/bundle.min.js && minify ./public/service-worker.js > ./public/service-worker.min.js && minify ./public/css/style.css > ./public/css/style.min.css"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "html-minifier": "^4.0.0",
-    "minify": "^4.1.3"
+    "minify": "^4.1.3",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
