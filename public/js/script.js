@@ -1,7 +1,7 @@
 "use strict";
 
-let data = require('./modules/data.js');
-let toggleMenu = require('./modules/togglemenu.js');
+const data = require('./modules/data.js');
+const toggleMenu = require('./modules/togglemenu.js');
 
 (function () {
     //// App structure
