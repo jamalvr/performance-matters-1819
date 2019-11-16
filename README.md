@@ -1,53 +1,48 @@
 # Performance Matters @cmda-minor-web · 2018-2019
-
-In dit vak gaan we de eerder bij de OBA gemaakte client side web applicatie ombouwen naar een server side gerenderde applicatie. Verder gaan we een reeks van optimalisaties doorvoeren om de performance van de applicatie te verbeteren. Uiteindelijk zorgen we ervoor dat de applicatie offline beschikbaar.
-
-## Leerdoelen
-- _Je weet het verschil tussen client side en server side rendering en kan server side rendering toepassen_
-- _Je begrijpt hoe de critical render path werkt, en hoe je deze kan optimaliseren voor een betere runtime en/of perceived performance._
-- _Je begrijpt hoe een Service Worker werkt en kan deze in jou applicatie implementeren._
-
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTO-pc2UMvpT0pUjt6NJeckc5N9E7QvCxEfVJW1JjuM0m_9MM8ra05J0s6br486Rocz5JVMhAX_C37_/pubhtml?gid=0&single=true)
-
-## Lesprogramma
-
-### Week 1 - Server Side rendering
-
-Doel: Webpagina's server side renderen
-
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-1.md)  
-[Slides](https://docs.google.com/presentation/d/1i6dvQJ19qPAoDumkZ4cN6Osfvq3dKWgGcJIiqlwNJ8I/edit?usp=sharing)  
-[Performance Matters Introduction](https://github.com/decrek/presentations/blob/master/cmda-performance-matters-2019.pdf)  
-
-### Week 2 - Critical Rendering Path  
-
-Doel: Critical Rendering path optimaliseren   
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-2.md)  
-[Slides](https://docs.google.com/presentation/d/1akkdQnSZLc5MQZecLFAcNh5kYrqsYFgEh5owAvgitUw/edit?usp=sharing)
-
-
-### Week 3 - Going Offline 
-
-Doel: Webpagina's offline beschikbaar stellen
-
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-3.md)
-
-[Slides](https://docs.google.com/presentation/d/1HVWxtvPr7j2XLZ1QlZJhgDt_RYBAEWjed-zxAps5Xwc/edit?usp=sharing)
-
+Door Jamal van Rooijen
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
+[Naar de demo](#)
 
 <!-- ☝️ replace this description with a description of your own work -->
+## App
+Ik heb nog geen OBA app, dus heb ik mijn WAFS app omgebouwd naar een server side versie. Je vindt hier een overzicht van 20 Pokemon billen.
+
+<!-- What external data source is featured in your project and what are its properties 🌠 -->
+ ### API
+ Er is gebruik gemaakt van de [PokeApi](pokeapi.org).
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+![Shiny Pokemon app frontend screenshot](public/img/shiny_frontend.png)
 
 <!-- Maybe a table of contents here? 📚 -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
+### Installing
+1. Ga naar je terminal
+2. Ga naar de map waar je het project wilt installeren
+3. Gebruik de volgende code in je terminal
+
+```
+cd /~path
+```
+```
+git clone https://github.com/cmda-minor-web/performance-matters-1819.git
+```
+```
+npm install
+```
+```
+npm run start
+```
+
+4. Veel plezier!
 
 <!-- ...but how does one use this project? What are its features 🤔 -->
+### Features
+ de mogelijkheid te filteren op gewicht en naar een detail pagina te gaan van een geselecteerde pokemon. Het overzicht en de detailpagina werken ook zonder Javascript. De filterknop werkt dan niet.
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+ Heb je geen internet? Dan wordt er een 404 pagina gerenderd. Zo weet je in ieder geval waarom de app niet werkt zoals je dat zou willen.
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
