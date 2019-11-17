@@ -8,8 +8,7 @@ const serviceWorker = function () {
                 var CACHE_NAME = 'my-site-cache-v1';
                 var urlsToCache = [
                     '/',
-                    '/css/style.css',
-                    
+                    '/css/style.css',                    
                     '/js/bundle.js',
                 ];
 

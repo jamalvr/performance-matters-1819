@@ -42,8 +42,22 @@ npm run start
 ### Features
  de mogelijkheid te filteren op gewicht en naar een detail pagina te gaan van een geselecteerde pokemon. Het overzicht en de detailpagina werken ook zonder Javascript. De filterknop werkt dan niet.
 
+#### Service Worker
+De service worker zorgt er ook voor dat de javascript en css worden gecached. Zo blijf je ook de basis stijl zien, zelfs wanneer je niet beschikt over een internet verbinding. Dit houdt natuurlijk niet in de app altijd zonder internet beschikbaar is. Je moet wel minstens een keer mét internet de app bezocht hebben.
+
  Heb je geen internet? Dan wordt er een 404 pagina gerenderd. Zo weet je in ieder geval waarom de app niet werkt zoals je dat zou willen.
+ [error page screenshot](public/img/error_screenshot.png) 
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+- [x] Service Worker
+- [x] Offline error page
+- [x] Render pages without javascript
+- [x] Bundle JS
+- [x] Minify JS
+- [x] Minify CSS
+- [x] Cache JSON response
+- [ ] Minify HTML
+- [ ] Cache image files
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+#### MIT license 🧾

@@ -23,8 +23,7 @@ router.get('/', function (req, res) {
 	} else {
 		request('https://pokeapi.co/api/v2/pokemon/', {
 			json: true
-		}, async function (err, requestRes, body) {
-			console.log(body);
+		}, async function (err, body) {
 			if (err) {
 				// We got an error
 				res.render('error', {
@@ -68,7 +67,7 @@ router.get('/', function (req, res) {
 router.get('/:id', function (req, res) {
 	request(`https://pokeapi.co/api/v2/pokemon/${req.params.id}`, {
 		json: true
-	}, function (err, requestRes, body) {
+	}, function (err, body) {
 		if (err) {
 			// We got an error
 			res.render('error', {
