@@ -2,10 +2,11 @@ const fs = require('fs');
 
 module.exports = {
     readCache: function () {
-        let filename = 'cache.json';
+        let fileName = 'cache.json';
 
-        if (fs.existsSync(filename)) {
-            let content = fs.readFileSync(filename);
+        if (fs.existsSync(fileName)) {
+            let content = fs.readFileSync(fileName);
+            console.log('hai');
             return JSON.parse(content);
         } else {
             console.log('cache not found');
@@ -13,8 +14,8 @@ module.exports = {
         }
     },
     saveCache: function (cache) {
-        let filename = 'cache.json';
+        let fileName = 'cache.json';
         let content = JSON.stringify(cache);
-        fs.writeFileSync(filename, content);
+        fs.writeFileSync(fileName, content);
     }
 }

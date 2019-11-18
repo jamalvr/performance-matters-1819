@@ -10,12 +10,10 @@ Ik heb nog geen OBA app, dus heb ik mijn WAFS app omgebouwd naar een server side
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
  ### API
- Er is gebruik gemaakt van de [PokeApi](pokeapi.org).
+ Er is gebruik gemaakt van de [PokeApi](pokeapi.co). Een restful API waar je 100 request per minuut mee mag doen. Standaard krijg je 20 Pokemons terug uit de response. Dit kan je zelf handmatig verhogen indien nodig.
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 ![Shiny Pokemon app frontend screenshot](public/img/shiny_frontend.png)
-
-<!-- Maybe a table of contents here? 📚 -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
 ### Installing
@@ -46,9 +44,19 @@ npm run start
 De service worker zorgt er ook voor dat de javascript en css worden gecached. Zo blijf je ook de basis stijl zien, zelfs wanneer je niet beschikt over een internet verbinding. Dit houdt natuurlijk niet in de app altijd zonder internet beschikbaar is. Je moet wel minstens een keer mét internet de app bezocht hebben.
 
  Heb je geen internet? Dan wordt er een 404 pagina gerenderd. Zo weet je in ieder geval waarom de app niet werkt zoals je dat zou willen.
- [error page screenshot](public/img/error_screenshot.png) 
+ [error page screenshot](public/img/error_screenshot.png)
+
+ #### Caching request
+ Om er voor te zorgen dat we alle requests niet telkens opnieuw hoeven te doen, wordt de data opgeslagen en weggeschreven in een `cache.json`. Deze wordt vanuit de server side aangemaakt, zodat deze weer client side gebruikt kan worden. Zo is de laadtijd vele male sneller wanneer de pagina al een keer bezocht is.
+
+##### Before caching
+ ![caching before](public/img/caching_before.png)
+
+##### After caching
+ ![caching after](public/img/caching_after.png)
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+#### Checklist
 - [x] Service Worker
 - [x] Offline error page
 - [x] Render pages without javascript

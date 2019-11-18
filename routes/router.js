@@ -9,6 +9,7 @@ const router = express.Router();
 // Create a route for our overview page
 router.get('/', function (req, res) {
 	let pokemons = caching.readCache();
+	console.log(pokemons);
 
 	renderOverview = function (pokemons) {
 		res.render('overview', {
@@ -17,14 +18,15 @@ router.get('/', function (req, res) {
 		});
 	}
 
-	if (pokemons !== null) {
-		// Render the page using the 'posts' view and our body data
-		renderOverview(pokemons);
-	} else {
+	if (pokemons === null) {
+		console.log('requesting pokemon');
+
 		request('https://pokeapi.co/api/v2/pokemon/', {
 			json: true
-		}, async function (err, body) {
+		}, async function (err, requestRes, body) {
+			console.log('async start');
 			if (err) {
+				console.log('error:', err);
 				// We got an error
 				res.render('error', {
 					title: '503',
@@ -33,13 +35,13 @@ router.get('/', function (req, res) {
 				});
 			} else {
 				function getPokemonDetails(url, i) {
+					console.log('requesting pokemon details:', url);
 					return new Promise(function (resolve, reject) {
 						request(url, {
 							json: true
 						}, function (err, requestRes, pokemonDetails) {
 							if (!err) {
 								body.results[i] = pokemonDetails;
-
 								resolve(body);
 							} else {
 								reject
@@ -47,6 +49,8 @@ router.get('/', function (req, res) {
 						})
 					})
 				}
+
+				console.log(requestRes);
 
 				for (let i = 0; body.results.length > i; i++) {
 					// console.log(i, body.results[i].url);
@@ -60,6 +64,9 @@ router.get('/', function (req, res) {
 				caching.saveCache(body.results);
 			}
 		});
+	} else {
+		// Render the page using the 'posts' view and our body data
+		renderOverview(pokemons);
 	}
 });
 
@@ -67,7 +74,7 @@ router.get('/', function (req, res) {
 router.get('/:id', function (req, res) {
 	request(`https://pokeapi.co/api/v2/pokemon/${req.params.id}`, {
 		json: true
-	}, function (err, body) {
+	}, function (err, requestRes, body) {
 		if (err) {
 			// We got an error
 			res.render('error', {
