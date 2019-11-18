@@ -44,16 +44,19 @@ npm run start
 De service worker zorgt er ook voor dat de javascript en css worden gecached. Zo blijf je ook de basis stijl zien, zelfs wanneer je niet beschikt over een internet verbinding. Dit houdt natuurlijk niet in de app altijd zonder internet beschikbaar is. Je moet wel minstens een keer mét internet de app bezocht hebben.
 
  Heb je geen internet? Dan wordt er een 404 pagina gerenderd. Zo weet je in ieder geval waarom de app niet werkt zoals je dat zou willen.
- [error page screenshot](public/img/error_screenshot.png)
+ ![error page screenshot](public/img/error_screenshot.png)
 
  #### Caching request
  Om er voor te zorgen dat we alle requests niet telkens opnieuw hoeven te doen, wordt de data opgeslagen en weggeschreven in een `cache.json`. Deze wordt vanuit de server side aangemaakt, zodat deze weer client side gebruikt kan worden. Zo is de laadtijd vele male sneller wanneer de pagina al een keer bezocht is.
 
 ##### Before caching
- ![caching before](public/img/caching_before.png)
+![caching before](public/img/caching_before.png)
 
 ##### After caching
- ![caching after](public/img/caching_after.png)
+![caching after](public/img/caching_after.png)
+
+#### Audit
+![Audit](public/img/audit_score.png)
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 #### Checklist
