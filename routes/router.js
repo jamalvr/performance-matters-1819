@@ -9,7 +9,7 @@ const router = express.Router();
 // Create a route for our overview page
 router.get('/', function (req, res) {
 	let pokemons = caching.readCache();
-	console.log(pokemons);
+	// console.log(pokemons);
 
 	renderOverview = function (pokemons) {
 		res.render('overview', {
@@ -19,14 +19,14 @@ router.get('/', function (req, res) {
 	}
 
 	if (pokemons === null) {
-		console.log('requesting pokemon');
+		// console.log('requesting pokemon');
 
 		request('https://pokeapi.co/api/v2/pokemon/', {
 			json: true
 		}, async function (err, requestRes, body) {
-			console.log('async start');
+			// console.log('async start');
 			if (err) {
-				console.log('error:', err);
+				// console.log('error:', err);
 				// We got an error
 				res.render('error', {
 					title: '503',
@@ -35,7 +35,7 @@ router.get('/', function (req, res) {
 				});
 			} else {
 				function getPokemonDetails(url, i) {
-					console.log('requesting pokemon details:', url);
+					// console.log('requesting pokemon details:', url);
 					return new Promise(function (resolve, reject) {
 						request(url, {
 							json: true
@@ -50,7 +50,7 @@ router.get('/', function (req, res) {
 					})
 				}
 
-				console.log(requestRes);
+				// console.log(requestRes);
 
 				for (let i = 0; body.results.length > i; i++) {
 					// console.log(i, body.results[i].url);
@@ -83,7 +83,7 @@ router.get('/:id', function (req, res) {
 				paragraph: 'We kunnen daardoor de detailpagina niet laden',
 			});
 		} else {
-			console.log(body);
+			// console.log(body);
 
 			// Render the page using the 'post' view and our body data
 			res.render('detail', {

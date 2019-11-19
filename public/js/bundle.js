@@ -9,7 +9,7 @@ const data = {
 
             state.pokemonWeight = weightArray;
             // state.pokemonWeight = weightArray;
-            console.log(state.pokemonWeight);
+            // console.log(state.pokemonWeight);
         }
     },
 
@@ -19,7 +19,7 @@ const data = {
             let cardArray = Array.from(pokemonCards);
 
             state.pokemonCards = cardArray;
-            console.log(state.pokemonCards);
+            // console.log(state.pokemonCards);
         }
     }
 };

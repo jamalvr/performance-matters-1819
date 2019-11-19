@@ -6,7 +6,6 @@ module.exports = {
 
         if (fs.existsSync(fileName)) {
             let content = fs.readFileSync(fileName);
-            console.log('hai');
             return JSON.parse(content);
         } else {
             console.log('cache not found');
