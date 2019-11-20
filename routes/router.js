@@ -51,7 +51,6 @@ router.get('/', function (req, res) {
 				}
 
 				// console.log(requestRes);
-
 				for (let i = 0; body.results.length > i; i++) {
 					// console.log(i, body.results[i].url);
 					let url = body.results[i].url;
